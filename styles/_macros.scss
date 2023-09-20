@@ -1,0 +1,41 @@
+@use "sass:color";
+
+$break-point: 840px;
+$phone-break-point: 600px;
+$border-radius: 10px;
+$bg-color: rgb(32, 150, 226);
+$bg-linear-gradient: linear-gradient(
+  90deg,
+  rgba(32, 150, 226, 1) 0%,
+  rgba(99, 187, 208, 1) 100%
+);
+
+@mixin panel {
+  border-radius: $border-radius;
+}
+
+@mixin bug_border {
+  border: 1px solid $orange;
+}
+
+$font-weight: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700,
+);
+
+$hover-opacity: 0.6;
+
+$font-size: (
+  title: 72px,
+  large: 48px,
+  big: 24px,
+  medium: 20px,
+  small: 16px,
+);
+
+$font-family: (
+  primary: "Poppins",
+  secondary: "Montserrat",
+);
