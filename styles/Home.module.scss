@@ -130,4 +130,71 @@
   align-items: center;
   width: 100%;
   margin-top: 50px;
+  padding: 10px;
+}
+
+.taskContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding-left: 10px;
+  height: 40px;
+  margin-bottom: 10px;
+  // if overflows, make div scrollable
+  overflow: auto;
+}
+
+.taskDescription {
+  width: calc(100% - 80px);
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: map-get($map: $font-size, $key: text);
+  font-weight: map-get($map: $font-weight, $key: regular);
+  color: $black;
+  overflow: scroll;
+}
+
+.taskDescriptionCompleted {
+  color: $gray;
+  text-decoration: line-through;
+}
+
+.taskButtonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskButton {
+  background-color: $orange;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+.taskButtonCheck {
+  background-color: $green;
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+.taskButtonCompleted {
+  background-color: $gray;
+  &:hover {
+    background-color: $orange;
+  }
 }

@@ -167,7 +167,69 @@ export default function Home() {
           <FilterTask setFilter={setFilter} filter={filter} />
         </div>
         <div className={`${styles.taskListContainer}`}>
-          <>hello</>
+          {tasks
+            .filter((task) => {
+              if (filter === "All") {
+                return task;
+              } else if (filter === "Completed") {
+                return task.completed === true;
+              } else if (filter === "Not Completed") {
+                return task.completed === false;
+              }
+            })
+            .map((task) => (
+              <div key={task.id} className={`${styles.taskContainer}`}>
+                <div
+                  className={`${styles.taskDescription}
+                ${task.completed ? styles.taskDescriptionCompleted : ""}
+                `}
+                >
+                  {task.description}
+                </div>
+                <div className={`${styles.taskButtonContainer}`}>
+                  <button
+                    onClick={() => {
+                      setTasks(
+                        tasks.map((t) => {
+                          if (t.id === task.id) {
+                            return {
+                              ...t,
+                              completed: !t.completed,
+                            };
+                          }
+                          return t;
+                        })
+                      );
+                    }}
+                    className={`${styles.taskButton} ${
+                      task.completed ? styles.taskButtonCompleted : ""
+                    } ${styles.taskButtonCheck}`}
+                  >
+                    <Image
+                      src="icons/done.svg"
+                      alt="check"
+                      width={20}
+                      height={20}
+                      style={{ display: "block" }}
+                    />
+                  </button>
+                  <button
+                    onClick={() => {
+                      setTasks(tasks.filter((t) => t.id !== task.id));
+                    }}
+                    className={`${styles.taskButton}`}
+                  >
+                    <Image
+                      src="icons/trash.svg"
+                      alt="trash"
+                      width={20}
+                      height={20}
+                      style={{ display: "block" }}
+                    />
+                  </button>
+                </div>
+              </div>
+            ))}
         </div>
       </main>
     </>
