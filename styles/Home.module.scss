@@ -143,8 +143,6 @@
   padding-left: 10px;
   height: 40px;
   margin-bottom: 10px;
-  // if overflows, make div scrollable
-  overflow: auto;
 }
 
 .taskDescription {
@@ -156,7 +154,13 @@
   font-size: map-get($map: $font-size, $key: text);
   font-weight: map-get($map: $font-weight, $key: regular);
   color: $black;
+  // center the text and allow only one line
+  // if overflows, make div scrollable
   overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  white-space: nowrap;
 }
 
 .taskDescriptionCompleted {
