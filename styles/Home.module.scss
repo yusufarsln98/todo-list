@@ -1,0 +1,133 @@
+@use "styles/_macros" as *;
+.main {
+  width: $break-point;
+  // responsive design
+  @media (max-width: $break-point) {
+    width: 100%;
+  }
+}
+.title {
+  color: $white;
+  //   change font size and weight
+  text-align: center;
+  font-size: map-get($map: $font-size, $key: title);
+  font-weight: map-get($map: $font-weight, $key: medium);
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.addAndFilterContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.addTaskContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.addTaskInput {
+  width: 100%;
+  height: 40px;
+  border: none;
+  padding-left: 10px;
+  padding-right: 36px;
+  font-size: map-get($map: $font-size, $key: text);
+  font-weight: map-get($map: $font-weight, $key: regular);
+  color: $black;
+  &:focus {
+    outline: none;
+  }
+}
+.addTaskButton {
+  background-color: $orange;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: $gray;
+  }
+  position: relative;
+  margin-left: -30px;
+  left: -6px;
+}
+
+.filterTaskContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.filterTask {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding-left: 10px;
+  height: 30px;
+}
+
+.filterTaskButton {
+  background-color: $orange;
+  border: none;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    background-color: $gray;
+  }
+}
+.dropdownList {
+  background-color: $white;
+  padding: 10px;
+  z-index: 1;
+  @include panel;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  .dropdownListItem {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: $gray;
+    }
+  }
+}
+
+.taskListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}

@@ -9,33 +9,33 @@ $bg-linear-gradient: linear-gradient(
   rgba(32, 150, 226, 1) 0%,
   rgba(99, 187, 208, 1) 100%
 );
+$white: #fff;
+$orange: #fc6b44;
+$green: #0ed1a2;
+$black: #010101;
+$gray: #7d7d7d;
 
 @mixin panel {
   border-radius: $border-radius;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 @mixin bug_border {
   border: 1px solid red;
 }
 
+// font sizes
+$font-size: (
+  title: 2.5rem,
+  subtitle: 1.5rem,
+  text: 1rem,
+  small: 0.8rem,
+);
+
+// font weights
 $font-weight: (
   light: 300,
   regular: 400,
   medium: 500,
   bold: 700,
-);
-
-$hover-opacity: 0.6;
-
-$font-size: (
-  title: 72px,
-  large: 48px,
-  big: 24px,
-  medium: 20px,
-  small: 16px,
-);
-
-$font-family: (
-  primary: "Poppins",
-  secondary: "Montserrat",
 );
